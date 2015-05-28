@@ -1,0 +1,46 @@
+<div class="zmodule_content panel" id="zmodule_header_<@ ModuleName @>">
+    <div class="panel-heading">
+        <img src="<@ ModuleIcon @>" width="35" height="35" border="0" alt="<@ ModuleName @>">
+
+        <div class="zmodule_title">
+            <@ ModuleName @>
+        </div>
+
+        <div class="zmodule_desc" id="zmodule_desc_<@ ModuleName @>"><@ ModuleDesc @></div>
+		
+    </div>
+	
+	<form action="./?module=Authenticator&action=Save" method="post">
+    <div class="zgrid_wrapper">
+        <h2><: Authenticator :></h2>
+            <table class="table table-striped">
+							<tr>
+								<th nowrap="nowrap"><: Enable :>:</th>
+								<td>
+									<input type="checkbox" name="inEnable" id="inEnable" value="1" <@ Enable @> />
+								</td>
+							</tr>
+                            <tr>
+                                <th nowrap="nowrap"><: Secert key :>:</th>
+                                <td>
+                                    <input type="text" name="inSecKey" id="inSecKey" value="<@ SecKey @>" readonly />
+                                </td>
+                            </tr>
+							<tr>
+                                <th nowrap="nowrap"><: QR code :>:</th>
+                                <td>
+                                    <@ Barcode @>
+                                </td>
+                            </tr>
+							<tr>
+								<th></th>
+                    			<td>	
+							<button class="button-loader btn btn-primary" type="submit" id="button" name="inSubmit" value="inSave"><: Save :></button>
+								</td>
+							</tr>
+							</table>
+    </div>
+	<@ CSFR_Tag @>
+	</form>
+
+</div>
