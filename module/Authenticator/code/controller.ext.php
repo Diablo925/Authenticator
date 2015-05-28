@@ -86,7 +86,8 @@ class module_controller extends ctrl_module
     $sql->execute();
 	$result = $sql->fetch();
 	$secret = $result['ac_otpkey_vc'];
-	$barcode = $ga->getQRCodeGoogleUrl($currentuser['username'], $secret);
+	$website = ctrl_options::GetSystemOption('sentora_domain');
+	$barcode = $ga->getQRCodeGoogleUrl($currentuser['username'], $secret, $website);
 	$barimg = "<image src=". $barcode .">";
 	
 		if(!empty($secret) || ($secret == 'null')) {
