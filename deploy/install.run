@@ -1,0 +1,31 @@
+<?php
+/**
+ *
+ * Installer for Authenticator Module for sentora 1.0.0
+ * Version : 100
+ */
+ 
+require_once('cnf/db.php');
+require_once('dryden/db/driver.class.php');
+require_once('dryden/debug/logger.class.php');
+require_once('dryden/runtime/dataobject.class.php');
+require_once('dryden/sys/versions.class.php');
+require_once('dryden/ctrl/options.class.php');
+require_once('dryden/ctrl/auth.class.php');
+require_once('dryden/ctrl/users.class.php');
+require_once('dryden/fs/director.class.php');
+require_once('inc/dbc.inc.php');
+
+
+//install
+installModule();
+
+function installModule(){
+ global $zdbh;
+ $sql = $zdbh->prepare("ALTER TABLE x_accounts ADD ac_otp_vc varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL AFTER ac_deleted_ts");
+ $sql->execute();
+ 
+ $sql = $zdbh->prepare("ALTER TABLE x_accounts ADD ac_otpkey_vc varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL AFTER ac_deleted_ts");
+ $sql->execute();
+}
+?>

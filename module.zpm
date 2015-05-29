@@ -9,6 +9,7 @@
         <div class="zmodule_desc" id="zmodule_desc_<@ ModuleName @>"><@ ModuleDesc @></div>
 		
     </div>
+	<@ Zadmininfo @>
 	
 	<form action="./?module=Authenticator&action=Save" method="post">
     <div class="zgrid_wrapper">
@@ -42,5 +43,4 @@
     </div>
 	<@ CSFR_Tag @>
 	</form>
-
 </div>

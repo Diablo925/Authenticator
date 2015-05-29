@@ -122,6 +122,17 @@ class module_controller extends ctrl_module
 	
 		return $secret;
     }
+	
+	static function getZadmininfo() {
+		global $controller;
+	$currentuser = ctrl_users::GetUserDetail();
+	if($currentuser['username'] == "zadmin") { 
+	$res = "You have to download the additional <a href=http://repo.alio.dk/auth/more.zip targer=_blank>file</a> to get it to work.<br />
+ they must be copied into their raspative directory under /etc/sentora/panel/...<br />
+ <b>Otherwise it does not.</b>"; } else { $res = ""; }
+	
+		return $res;
+    }
 	 /**
      * Webinterface sudo methods.
      */

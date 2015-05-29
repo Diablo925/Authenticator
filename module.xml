@@ -2,7 +2,7 @@
 <module>
     <name>Authenticator</name>
     <version>100</version>
-    <defaultcat> Account Information</defaultcat>
+    <defaultcat>Account Information</defaultcat>
     <desc>Allow you to add TOTP Authenticator</desc>
     <authorname>Diablo925</authorname>
     <authoremail>carsten@alio.dk</authoremail>
